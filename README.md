@@ -17,7 +17,7 @@ git clone https://github.com/diveDylan/learn-vue.git
 
 cd learn-vue
 
-git checkout xy_learn_vue_component_20200608
+git checkout release
 
 
 # 安装依赖
