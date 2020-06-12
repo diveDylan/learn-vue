@@ -83,7 +83,7 @@
   })
 
   ```
-这里我们就实现了一个简单的`reactivity system`
+这里我们就实现了一个简单的`reactivity system`\n
 3. step 3<br/>
   --- 创建一个dep管理多个数据的reactivity
 4. step 4<br/>
