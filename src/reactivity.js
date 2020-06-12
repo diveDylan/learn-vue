@@ -5,9 +5,10 @@ class Dep {
   constructor() {
     this.subscribeList = []
   }
+  static target = null // 利用这个缓存这次的依赖
   add() {
-    if (target && !this.subscribeList.includes(target)) { // no repeat depend
-      this.subscribeList.push(target)
+    if (Dep.target && !this.subscribeList.includes(Dep.target)) { // no repeat depend
+      this.subscribeList.push(Dep.target)
     }
   }
   notify() {
@@ -36,7 +37,7 @@ function observe(obj) {
     const dep = new Dep()
     Object.defineProperty(obj, prop, {
       get: function() {
-        if (target) dep.add()
+        if (Dep.target) dep.add()
         console.log(`get ${prop}`)
         return initVal
       },
@@ -49,11 +50,10 @@ function observe(obj) {
   })
 }
 observe(product)
-let target
 function watcher(fn) {
-  target = fn
-  target()
-  target = null
+  Dep.target = fn
+  Dep.target()
+  Dep.target = null
 }
 
 watcher(getTotal)
