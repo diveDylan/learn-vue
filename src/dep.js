@@ -4,7 +4,7 @@ export default class Dep {
   }
   static target = null // 一次缓存一个需要更新的依赖，可以理解为回调
   add() {
-    if (target) {
+    if (Dep.target && !this.subscribeList.includes(Dep.target)) {
       this.subscribeList.push(target)
     }
   }

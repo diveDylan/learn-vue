@@ -58,7 +58,7 @@ observe(product)
 
 class Watcher {
   constructor() {
-  
+    
   }
 
 }
