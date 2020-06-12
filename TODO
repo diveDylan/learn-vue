@@ -1,5 +1,6 @@
 ✔ 1、defineProperty @done(20-06-12 21:55)
 ✔ 2、reactivity @done(20-06-12 21:55)
-☐ 3、dep & watcher @started(20-06-12 21:55)
-☐ 4、compile
-☐ 5、vue
+✔ 3、dep @done(20-06-12 23:27)
+☐ 4、watcher @started(20-06-12 23:27)
+☐ 5、compile
+☐ 6、vue

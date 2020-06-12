@@ -50,11 +50,19 @@ function observe(obj) {
   })
 }
 observe(product)
-function watcher(fn) {
-  Dep.target = fn
-  Dep.target()
-  Dep.target = null
+// function watcher(fn) {
+//   Dep.target = fn
+//   Dep.target()
+//   Dep.target = null
+// }
+
+class Watcher {
+  constructor() {
+  
+  }
+
 }
+
 
 watcher(getTotal)
 watcher(getSales)
