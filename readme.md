@@ -86,11 +86,15 @@
 这里我们就实现了一个简单的`reactivity system`<br/>
 3. step 3<br/>
   --- 创建一个dep管理多个数据的reactivity
+</br>
 4. step 4<br/>
   --- 创建一个Watcher
+</br>
 5. step 5<br/>
   --- 创建一个compile
+</br>
 6. step 6<br/>
   --- 创建一个vue
+</br>
 7. step 7<br/>
   --- proxy fro reactivity
