@@ -1,8 +1,8 @@
 ### 学习步骤
-1. step 1<br/>
+## 1. step 1<br/>
   --- 理解defineProperty这个api的应用
   > defineProperty是reactivity响应式的基础api，提供了对象属性getter/setter拦截
-2. step 2<br/>
+## 2. step 2<br/>
   --- 理解reactivity这个概念，可以根据事件onchange--》update这个思想理解数据\n
   reactivity可以说是根据我们交互和日常升华出来的一个概念
   ```js
@@ -84,17 +84,17 @@
 
   ```
 这里我们就实现了一个简单的`reactivity system`<br/>
-3. step 3<br/>
+## 3. step 3<br/>
   --- 创建一个dep管理多个数据的reactivity
 </br>
-4. step 4<br/>
+## 4. step 4<br/>
   --- 创建一个Watcher
 </br>
-5. step 5<br/>
+## 5. step 5<br/>
   --- 创建一个compile
 </br>
-6. step 6<br/>
+## 6. step 6<br/>
   --- 创建一个vue
 </br>
-7. step 7<br/>
+## 7. step 7<br/>
   --- proxy fro reactivity
