@@ -1,6 +1,7 @@
 /**
  * make reactivity things here
  */
+const element = document.querySelector('#app')
 class Dep {
   constructor() {
     this.subscribeList = []
@@ -50,19 +51,13 @@ function observe(obj) {
   })
 }
 observe(product)
-// function watcher(fn) {
-//   Dep.target = fn
-//   Dep.target()
-//   Dep.target = null
-// }
-
-class Watcher {
-  constructor() {
-    
-  }
-
+function watcher(fn) {
+  Dep.target = fn
+  Dep.target()
+  Dep.target = null
 }
 
 
-watcher(getTotal)
-watcher(getSales)
+
+watcher(() => element.innerText = product.price * product.count)
+// watcher(getSales)
