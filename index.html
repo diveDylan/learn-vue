@@ -8,5 +8,19 @@
 <body>
   <div id="app"></div>
   <script src="./src/reactivity.js"></script>
+  <script>
+    const a = new Vue({
+      el: document.querySelector('#app'),
+      data: () =>({
+        price: 2,
+        amount: 2
+      }),
+      template: `
+        <label> price:</label>
+        <p> ${this.data} </p>
+       
+      `
+    })
+  </script>
 </body>
 </html>
