@@ -1,11 +1,13 @@
+import Dep from './dep.js'
 export default class Watcher {
   constructor(vm, exp, cb) {
     this.vm = vm
     this.exp = exp
     this.cb = cb
-    this.value = this.get()
+    this.value = this.get() // add depend
   }
   get() {
+    console.log('get')
     Dep.target = this
     const val = this.vm.data[this.exp]
     Dep.target = null

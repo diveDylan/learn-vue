@@ -7,20 +7,19 @@
 </head>
 <body>
   <div id="app"></div>
-  <script src="./src/reactivity.js"></script>
-  <script>
-    const a = new Vue({
-      el: document.querySelector('#app'),
-      data: () =>({
-        price: 2,
-        amount: 2
-      }),
-      template: `
-        <label> price:</label>
-        <p> ${this.data} </p>
-       
-      `
-    })
+  <script type="module">
+  
+   import Vue from './src/index.js'
+   var a = new Vue({
+     data: () => ({
+       price: 1,
+       amout: 2
+     }),
+     el: document.querySelector('#app')
+   })
+   setTimeout(() => {
+     a.data.price = 3
+   }, 1000)
   </script>
 </body>
 </html>
