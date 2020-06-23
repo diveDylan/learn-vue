@@ -7,7 +7,7 @@ export default class Watcher {
     this.value = this.get() // add depend
   }
   get() {
-    console.log('get')
+    console.log('get', this.exp)
     Dep.target = this
     const val = this.vm.data[this.exp]
     Dep.target = null

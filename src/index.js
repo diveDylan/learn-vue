@@ -4,8 +4,9 @@
  * * * render  `jsx code`
  * * * data `init data`
  */
+import { isFn } from './utils.js'
 import Dep from './dep.js'
-import Watcher from './watcher.js'
+import Compile from './compile.js'
 
 function observe(obj, vm, cb) {
   Object.keys(obj).forEach(prop => {
@@ -27,29 +28,19 @@ export default class Vue {
   constructor(options) {
     this.vm = this
     this.init(options)
-    console.log(this)
-    this.render()
-    new Watcher(this.vm, 'price', this.render)
     return this.vm
   }
 
   init(options) {
     this.el = options.el
-    this.template = options.template
     this.initData(options.data)
   }
 
   initData(data) {
-    this.data = typeof data === 'function' ? data() : (data || {})
+    this.data = isFn(data) ? data() : (data || {})
     observe(this.data, this.vm, this.render)
-    
+    new Compile(this.el, this.render, this.vm)
   }
 
-  render = () => {
-    console.log('render')
-    this.el.innerText = this.vm.data.price
-    // const nodeF = document.createDocumentFragment()
-    // nodeF.appendChild(this.template)
-    // this.el.appendChild(nodeF)
-  }
+ 
 }

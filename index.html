@@ -6,7 +6,12 @@
   <title>learn vue</title>
 </head>
 <body>
-  <div id="app"></div>
+  <div id="app">
+      <label> 价格:</label>
+      <p>{{ price }}</p>
+      <label> 数量:</label>
+      <p>{{ amout }}</p>
+  </div>
   <script type="module">
   
    import Vue from './src/index.js'
@@ -15,10 +20,11 @@
        price: 1,
        amout: 2
      }),
-     el: document.querySelector('#app')
+     el: document.querySelector('#app'),
+   
    })
    setTimeout(() => {
-     a.data.price = 3
+     a.data.amout = 3
    }, 1000)
   </script>
 </body>
