@@ -4,6 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>learn vue</title>
+  <style>
+    ul {
+      width: 100%;
+      height: 500px;
+      background-color: bisque;
+    }
+    li {
+      width: 100%;
+      height: 200px;
+      background-color: cadetblue;
+    }
+  </style>
 </head>
 <body>
   <div id="app">
@@ -12,6 +24,12 @@
       <label> 数量:</label>
       <p>{{ amout }}</p>
   </div>
+  <ul>
+    <li>
+      <span>what is event capture or event bubbling</span>
+    </li>
+  </ul>
+  <button>event default </button>
   <script type="module">
   
    import Vue from './src/index.js'
@@ -26,6 +44,16 @@
    setTimeout(() => {
      a.data.amout = 3
    }, 1000)
+  </script>
+  <script>
+    const ulEl = document.querySelector('ul')
+    const liEl = document.querySelector('li')
+    ulEl.addEventListener('click', e => {
+      console.log('ul element click')
+    }, false)
+    liEl.addEventListener('click', e =>{
+      console.log('li element click')
+    })
   </script>
 </body>
 </html>
