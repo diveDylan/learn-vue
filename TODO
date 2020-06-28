@@ -2,9 +2,9 @@
 ✔ 2、reactivity @done(20-06-12 21:55)
 ✔ 3、dep @done(20-06-12 23:27)
 ✔ 4、watcher @started(20-06-12 23:27) @done(20-06-22 20:10) @lasted(1w2d20h43m20s)
-☐ 5、compile 
+✔ 5、compile @done(20-06-28 15:09)
   ☐ we need template vue
-☐ 6、vue
+✔ 6、vue @done(20-06-28 15:09)
 ☐ 7、compute
 ☐ 8、watch
 ☐ 9、nextick

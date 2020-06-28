@@ -42,5 +42,24 @@ export default class Vue {
     new Compile(this.el, this.render, this.vm)
   }
 
+  proxyForData(data) {
+    return new Proxy(this, {
+      get: function(target, prop, reciver) {
+        if (this[prop]) {
+          Reflect.get(target, prop, reciver)
+        } else if(this.data[prop]) {
+          this.data[prop]
+        }
+      },
+      set: function(target, prop, value, reciver) {
+        if (this[prop]) {
+          Reflect.set(target, prop, value)
+        } else if(this.data[prop]) {
+          this.data[prop] = value
+        }
+      }
+    })
+  }
+
  
 }
