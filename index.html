@@ -19,10 +19,7 @@
 </head>
 <body>
   <div id="app">
-      <label> 价格:</label>
-      <p>{{ price }}</p>
-      <label> 数量:</label>
-      <p>{{ amout }}</p>
+
   </div>
   <ul>
     <li>
@@ -32,17 +29,28 @@
   <button>event default </button>
   <script type="module">
   
-   import Vue from './src/index.js'
+   import Vue from './src/vue-render.js'
    var a = new Vue({
      data: () => ({
        price: 1,
        amout: 2
      }),
      el: document.querySelector('#app'),
+     template(data) {
+       console.log('template data', data)
+       const { price,  amout } = data
+       return `
+       <label> 价格:</label>
+      <p>${ price }</p>
+      <label> 数量:</label>
+      <p>${ amout }</p>
+       `
+     }
    
    })
    setTimeout(() => {
      a.data.amout = 3
+     console.log(a)
    }, 1000)
   </script>
   <script>
