@@ -50,20 +50,20 @@ export default class Vue {
     this.el.innerHTML = template
   }
 
-  proxyForData(data) {
-    return new Proxy(this, {
+  proxyForData(proxyTarget) {
+    return new Proxy(proxyTarget, {
       get: function(target, prop, reciver) {
-        if (this[prop]) {
+        if (target[prop]) {
           Reflect.get(target, prop, reciver)
-        } else if(this.data[prop]) {
-          this.data[prop]
+        } else if(target.data[prop]) {
+          target.data[prop]
         }
       },
       set: function(target, prop, value, reciver) {
-        if (this[prop]) {
+        if (target[prop]) {
           Reflect.set(target, prop, value)
-        } else if(this.data[prop]) {
-          this.data[prop] = value
+        } else if(target.data[prop]) {
+          target.data[prop] = value
         }
       }
     })
