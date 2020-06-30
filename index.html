@@ -68,6 +68,28 @@
     setTimeout(() => {
       console.log('task 10ms')
     }, 10)
+    function Person (name) {
+      this.name = name
+    }
+    Person.prototype.log = () => {
+      console.log(1)
+    }
+    const a = new Person('dylan')
+    Person.prototype = {
+      age: 10
+    }
+    const b = new Person('dyaln')
+    // Person.prototype.age = 20
+    console.log(`dylan's age`, a.age, a, b.age)
+    let prot = {}
+    function consTest (name) {
+      this.name = name
+      this.prot = prot
+    }
+    const c = new consTest('dylan')
+    prot = { age: 10}
+    const d = new consTest('d')
+    console.log(c, d)
   </script>
 </body>
 </html>
