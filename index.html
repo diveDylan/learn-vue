@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>learn vue</title>
+  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
   <style>
     ul {
       width: 100%;
@@ -18,6 +19,7 @@
   </style>
 </head>
 <body>
+  <input type="text" class="el-input__inner">
   <div id="app">
 
   </div>
@@ -90,6 +92,33 @@
     prot = { age: 10}
     const d = new consTest('d')
     console.log(c, d)
+    const obj = {
+      age: 18,
+      say() {
+        console.log('say : i am ' + this.age + ' years old')
+        let b = this.age || 30
+        return () => {
+          console.log('inner age maybe true: ', this.age)
+        }
+      }
+    }
+    obj.say()
+    const say = obj.say()
+    say()
+
+    function Man(name) {
+      this.name = name
+      this.log = function () {
+        console.log(this)
+      }
+    }
+    const l = new Man('dylan')
+    const obj2 = {
+      name: 'obj2',
+      log: l.log
+    }
+    obj2.log()
+    const rount = x => Math.round(x * 100) / 100
   </script>
 </body>
 </html>
