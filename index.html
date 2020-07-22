@@ -32,7 +32,7 @@
   <script type="module">
   
    import Vue from './src/vue-render.js'
-   var a = new Vue({
+   const a = new Vue({
      data: () => ({
        price: 1,
        amout: 2
@@ -76,7 +76,7 @@
     Person.prototype.log = () => {
       console.log(1)
     }
-    const a = new Person('dylan')
+    const a1 = new Person('dylan')
     Person.prototype = {
       age: 10
     }
@@ -119,6 +119,9 @@
     }
     obj2.log()
     const rount = x => Math.round(x * 100) / 100
+  </script>
+  <script>
+    "use strict"
   </script>
 </body>
 </html>

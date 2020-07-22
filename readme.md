@@ -3,10 +3,10 @@
   --- 理解defineProperty这个api的应用
   > defineProperty是reactivity响应式的基础api，提供了对象属性getter/setter拦截
 ## 2. step 2<br/>
-  --- 理解reactivity这个概念，可以根据事件onchange--》update这个思想理解数据\n
+  --- 理解reactivity这个概念，可以根据事件onchange--》update这个思想理解数据<br/>
   reactivity可以说是根据我们交互和日常升华出来的一个概念
   ```js
-  // i have one apple $2
+  // i have an apple $2
   let price = 2
   let count = 1
   total = price * count // 2
@@ -98,3 +98,10 @@
 </br>
 ## 7. step 7<br/>
   --- proxy fro reactivity (TODO)
+## 8.  step 8<br/>
+  --- Vnode
+## 9.  step 9<br/>
+  --- h() Function
+## 10.  step 10<br/>
+  --- diff dispatch
+

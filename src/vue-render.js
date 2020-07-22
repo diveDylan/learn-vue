@@ -30,6 +30,7 @@ export default class Vue {
   constructor(options) {
     this.vm = this
     this.init(options)
+    
   }
 
   init(options) {
