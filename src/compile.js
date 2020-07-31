@@ -12,7 +12,6 @@ export default class Compile {
   }
 
   createFg (node) {
-    
     var fg = document.createDocumentFragment()
     var child
     while ( child = node.firstChild) {

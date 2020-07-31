@@ -23,6 +23,7 @@
   <div id="app">
 
   </div>
+  <div id="create"></div>
   <ul>
     <li>
       <span>what is event capture or event bubbling</span>
@@ -32,12 +33,41 @@
   <script type="module">
   
    import Vue from './src/vue-render.js'
+   import createElement from './src/createElement.js'
+   let frag = createElement({
+     tag: 'ul',
+     attrs: {
+       style: 'color: white; border: none', 
+       class: 'ul',
+       on: {
+         click: () => alert('click from createElement')
+       }
+     },
+     children: [
+       'text create',
+        {
+          tag: 'li',
+          children: [
+            '1'
+          ]
+        },
+        {
+          tag: 'li',
+          children: [
+            '2'
+          ]
+        }
+     ]
+   })
+   const el = document.querySelector('#app')
+   document.querySelector('#create').appendChild(frag)
+   console.log(frag)
    const a = new Vue({
      data: () => ({
        price: 1,
        amout: 2
      }),
-     el: document.querySelector('#app'),
+     el,
      template(data) {
        console.log('template data', data)
        const { price,  amout } = data
@@ -82,7 +112,6 @@
     }
     const b = new Person('dyaln')
     // Person.prototype.age = 20
-    console.log(`dylan's age`, a.age, a, b.age)
     let prot = {}
     function consTest (name) {
       this.name = name
